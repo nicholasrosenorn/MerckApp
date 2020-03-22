@@ -1,36 +1,77 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import logo from '/Users/nicholasrosenorn/Desktop/AwesomeProject/assets/merckPhoto.png'
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView,  } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Image source={logo} style={{ width: 305, height: 300 }} /> 
-      <Text>Merck Application!</Text>
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-      <Text></Text>
-      
-      <TouchableOpacity onPress={() => alert('Welcome to Our Application!')} style={styles.myButton}>
-        <Text style={styles.myButtonText}>Start</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+import HomeScreen from './components/HomeScreen';
+import InfoScreen from './components/InfoScreen';
+import SurveyScreen from './components/SurveyScreen';
+import FinishSurveyScreen from './components/FinishSurveyScreen';
+import ChartScreen from './components/ChartScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const RootStack = createStackNavigator(
+  {
+    Home: {
+      screen : HomeScreen,
+      navigationOptions: {
+        headerTitle: 'Home',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    },
+    Info : {
+      screen : InfoScreen,
+      navigationOptions: {
+        headerTitle: 'Information',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    },
+    Survey : {
+      screen: SurveyScreen,
+      navigationOptions: {
+        headerTitle: 'Survey',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    },
+    FinishSurvey: {
+      screen: FinishSurveyScreen,
+      navigationOptions: {
+        headerTitle: 'Finish Survey',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      }
+    },
+    Chart: {
+      screen: ChartScreen,
+      navigationOptions: {
+        headerTitle: 'Chart',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    }
   },
-  myButton: {
-    backgroundColor: "#10B09F",
-    padding: 20,
-    borderRadius: 5,
+)
+
+export default createAppContainer(
+  createSwitchNavigator({
+    Home: HomeScreen,
+    Root: RootStack
   },
-  myButtonText: {
-    fontSize: 20,
-    color: '#fff',
-  }, 
-});
+  {
+    initialRouteName: "Home",
+  },
+  )
+);
