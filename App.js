@@ -4,18 +4,29 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView,  } from 'r
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import HomeScreen from './components/HomeScreen';
+import MyInformationScreen from './components/MyInformationScreen';
 import InfoScreen from './components/InfoScreen';
 import SurveyScreen from './components/SurveyScreen';
 import FinishSurveyScreen from './components/FinishSurveyScreen';
 import ChartScreen from './components/ChartScreen';
+import HomePageScreen from './components/HomePageScreen';
 
 const RootStack = createStackNavigator(
   {
-    Home: {
-      screen : HomeScreen,
+    HomePage: {
+      screen : HomePageScreen,
       navigationOptions: {
-        headerTitle: 'Home',
+        headerTitle: 'HomePage',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    },
+    MyInformation: {
+      screen : MyInformationScreen,
+      navigationOptions: {
+        headerTitle: 'My Information',
         headerStyle: {
           backgroundColor: 'black',
         },
@@ -67,7 +78,7 @@ const RootStack = createStackNavigator(
 
 export default createAppContainer(
   createSwitchNavigator({
-    Home: HomeScreen,
+    Home: HomePageScreen,
     Root: RootStack
   },
   {

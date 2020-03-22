@@ -62,15 +62,4 @@ class ChartScreen extends Component
     }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    height: '60%'
-  },
-  container2: {
-    borderColor: 'white',
-    borderWidth: 1,
-    backgroundColor: 'black',
-  }
-});
-
 export default ChartScreen;

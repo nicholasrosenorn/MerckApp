@@ -5,6 +5,7 @@ export default class SurveyScreen extends Component {
     navigateToFinishSurvey = () => {
         this.props.navigation.navigate('FinishSurvey');
     }
+    
     render() {
         return (
             <View style={{flex: 1, backgroundColor: 'black'}}>
@@ -115,21 +116,6 @@ export default class SurveyScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    myButton: {
-      backgroundColor: "#10B09F",
-      padding: 20,
-      borderRadius: 5,
-    },
-    myButtonText: {
-      fontSize: 20,
-      color: '#fff',
-    },
     surveyButtons: {
       backgroundColor: "#10B09F",
       padding: 15,

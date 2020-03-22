@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Dimensions, Alert } from 'react-native';
-import { black } from 'colorette';
 
 export default class FinishSurveyScreen extends Component {
     navigateToHome = () => {
@@ -25,30 +24,6 @@ export default class FinishSurveyScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    myButton: {
-      backgroundColor: "#10B09F",
-      padding: 20,
-      borderRadius: 5,
-    },
-    myButtonText: {
-      fontSize: 20,
-      color: '#fff',
-    },
-    surveyButtons: {
-      backgroundColor: "#10B09F",
-      padding: 15,
-      borderRadius: 5,
-    },
-    surveyButtonsText: {
-      fontSize: 20,
-      color: '#fff',
-    },
     finishButton: {
       backgroundColor: "#1C1C1C",
       padding: 18,
