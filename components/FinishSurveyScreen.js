@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Dimensions
 
 export default class FinishSurveyScreen extends Component {
     navigateToHome = () => {
-        this.props.navigation.navigate('Home');
+        this.props.navigation.navigate('HomePage');
     }
 
     render() {

@@ -10,9 +10,20 @@ import SurveyScreen from './components/SurveyScreen';
 import FinishSurveyScreen from './components/FinishSurveyScreen';
 import ChartScreen from './components/ChartScreen';
 import HomePageScreen from './components/HomePageScreen';
+import LoginScreen from './components/LoginScreen';
 
 const RootStack = createStackNavigator(
   {
+    Login: {
+      screen : LoginScreen,
+      navigationOptions: {
+        headerTitle: 'Login',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTintColor: "#d2f7f1",
+      },
+    },
     HomePage: {
       screen : HomePageScreen,
       navigationOptions: {
@@ -78,11 +89,11 @@ const RootStack = createStackNavigator(
 
 export default createAppContainer(
   createSwitchNavigator({
-    Home: HomePageScreen,
+    Login: LoginScreen,
     Root: RootStack
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
   },
   )
 );
